@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aashir</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init("Kaqx3GuMlp7_LIQKn");
+})();
+</script>
+
+  </head>
+  <body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+      <nav>
+        <div class="nav--title blue">Aashir</div>
+        <ul class="nav__link--list">
+          <li class="nav__link"  onclick="toggleModal()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >About</a
+            >
+          </li>
+
+          <li class="nav__link">
+            <a
+              href="#projects"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Projects</a
+            >
+          </li>
+
+          <li class="nav__link" onclick="toggleModal()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Contact</a
+            >
+          </li>
+
+          <li class="nav__link click">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              ><i class="fas fa-adjust" onclick="toggleContrast()"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+
+      <header class="header">
+        <div class="header__content">
+          <h1 class="title">Hi!</h1>
+          <h1 class="title blue">I am Aashir</h1>
+          <p class="header__para">
+            I am an <b class="blue">Upcoming Frontend Software Engineer</b> with
+            a strong interest in building major web applications based on user
+            needs
+            <br />
+            Here is some more information <b class="blue click" onclick="toggleModal()">about me.</b>
+          </p>
+          <div class="social__list">
+            <a href="https://github.com/aashir678" target="_blank" class="social__link click">
+              <i class="fab fa-github"></i>
+            </a>
+
+            <a href="#" class="social__link click">
+              <i class="fas fa-file-pdf"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <a href="#">
+        <button class="mail__button click" onclick="toggleModal()">
+          <i class="fas fa-envelope"></i>
+        </button>
+      </a>
+      
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+      </a>
+
+      <div class="modal">
+        <div class="modal_half modal__about">
+           <h3 class="modal__title modal__title--about">Some more information about me</h3>
+           <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
+           <p class="modal__para">
+            I am a <b class="blue">frontend software engineer</b> with a strong interest in <br> building major web applications based on <b class="blue">user 
+            needs</b> thus <br> allowing for greater <b class="blue">user experience.</b>
+           </p>
+           <div class="modal__languages">
+            <figure class="modal_language">
+            <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/120px-HTML5_logo_and_wordmark.svg.png" alt=""> 
+            <span class="lanuage__name">HTML</span>
+            </figure>
+             <figure class="modal_language">
+                <img class="modal__language--img" src="https://toppng.com/uploads/preview/html-css-js-icons-11563328364gmstz4ubs9.png" alt=""> 
+                <span class="lanuage__name">CSS</span>
+                </figure>
+
+                 <figure class="modal_language">
+                    <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt=""> 
+                    <span class="lanuage__name">JavaScript</span>
+                    </figure>
+
+                    <figure class="modal_language">
+                        <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" alt=""> 
+                        <span class="lanuage__name">React</span>
+                        </figure>
+           </div>
+        </div>
+
+
+        <div class="modal_half modal__contact">
+          <i class="fas fa-times modal__exit click"  onclick="toggleModal()"></i>
+          <h3 class="modal__title modal__title--contact">
+            Let's have a chat!
+          </h3>  
+          <h3 class="modal__sub-title modal__sub-title--contact">
+            I'd love to hear from you
+          </h3>
+
+          <form id="contact__form" onsubmit="contact(event)">
+            <div class="form__item">
+                <label class="form__item--label">Name</label>
+                <input class="input" name="user_name" type="text" ></input>
+            </div>
+          
+            <div class="form__item">
+                <label class="form__item--label">Email</label>
+                <input class="input" name="user_email" type="email" ></input>
+            </div>
+         
+            <div class="form__item">
+                <label class="form__item--label">Message</label>
+                <textarea class="input" name="message" type="text" ></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">
+                Send it my way
+            </button>
+          </form>
+
+
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+             Thanks for the message! Looking forward to speaking to you soon
+          </div>
+        </div>
+       
+      </div>
+      <img src="./assets/semi circle.svg" class="shape shape--0">
+      <img src="./assets/circle.svg" class="shape shape--1">
+      <img src="./assets/squiggly.svg" class="shape shape--2">
+      <img src="./assets/circle.svg" class="shape shape--3">
+      <img src="./assets/triangle.svg" class="shape shape--4">
+      <img src="./assets/semi circle.svg" class="shape shape--5">
+      <img src="./assets/squiggly.svg" class="shape shape--6">
+      <img src="./assets/circle.svg" class="shape shape--7">
+      <img src="./assets/semi circle.svg" class="shape shape--8">
+
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">
+            List of some of my <span class="blue">projects</span>
+          </h1>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/Scratch Store.PNG"
+                  class="project__img"
+                  alt=""
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Store Project</h3>
+                  <h4 class="project__description--sub-title">HTML, CSS</h4>
+                  <p class="project__description--para">
+                    This was my first single page layout site which consisted of
+                    me using different layouts <br />
+                    and using my combination of HTML and CSS. I had also used
+                    the CSS Blur technique within this project.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="https://github.com/aashir678/Scratch-Store" target="_blank" class="project__descripton--link">
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="project__descripton--link">
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/movieflex.PNG"
+                  class="project__img"
+                  alt=""
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">MovieFlex</h3>
+                  <h4 class="project__description--sub-title">HTML, CSS, JavaScript</h4>
+                  <p class="project__description--para">
+                    This was a website developed using best practices of JavaScript which employs the use of the OMDB API.<br />
+                    The site allows users to search for movies, shows which then dynamically hits the API and displays results. </br>
+                    It also allows users to filter the results based upon the year. This project showcases the utilisation of async, await, fetch and flexbox CSS for layout.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="https://github.com/aashir678/MovieFlex" target="_blank" class="project__descripton--link">
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="project__descripton--link">
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/movieflex-react.PNG"
+                  class="project__img"
+                  alt=""
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">MoveiFlex React</h3>
+                  <h4 class="project__description--sub-title">HTML, CSS, JavaScript, React</h4>
+                  <p class="project__description--para">
+                    Created a Movie Website Project using React which allows a user to input a search which then fetches data from the OMDB API Dynamically using Axios. 
+                    React routing was also used within the project alongside tools like UseState and UseEffect. Search results could also be filtered by year and it also includes a loading state.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="https://github.com/aashir678/MovieFlex-React" class="project__descripton--link">
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="project__descripton--link">
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+       <div class="container footer__row">
+        <div class="row">
+        <div class="footer__title">Aashir</div>
+       </div>
+       <div class="footer__social--list">
+        <a href="https://github.com/aashir678/" target="_blank" class="
+        footer__social--link
+        link__hover-effect
+        link__hover-effect--white
+        ">
+       Github
+        </a>
+
+        <a href="mailto:aashir7890@outlook.com" class="
+        footer__social--link
+        link__hover-effect
+        link__hover-effect--white
+        ">
+       Email
+        </a>
+
+        <a href="#" class="
+        footer__social--link
+        link__hover-effect
+        link__hover-effect--white
+        ">
+        CV
+        </a>
+       </div>
+    
+       <div class="footer__copyright">
+        Copyright &copy; Aashir 2023
+       </div>
+    </div>
+    </footer>
+  </body>
+</html>
